@@ -31,6 +31,7 @@ interface ItemProps {
   active?: boolean;
   expanded?: boolean;
   isSearch?: boolean;
+  isGemini?: boolean;
   level?: number;
   onExpand?: () => void;
   label: string;
@@ -44,6 +45,7 @@ export const Item = ({
   active,
   expanded,
   isSearch,
+  isGemini,
   level = 0,
   onExpand,
   label,
@@ -126,6 +128,11 @@ export const Item = ({
       {isSearch && (
         <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span className="text-xs">⌘</span>K
+        </kbd>
+      )}
+      {isGemini && (
+        <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <span className="text-xs">⌘</span>G
         </kbd>
       )}
       {!!id && (

@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { useMutation, useQuery } from "convex/react";
 import {
+  Brain,
   ChevronsLeft,
   MenuIcon,
   Plus,
@@ -28,10 +29,12 @@ import { TrashBox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
 import { Navbar } from "./navbar";
+import { useGemini } from "@/hooks/use-gemini";
 
 const Navigation = () => {
   const router = useRouter();
   const settings = useSettings();
+  const gemini = useGemini();
   const search = useSearch();
   const params = useParams();
   const pathname = usePathname();
@@ -157,6 +160,7 @@ const Navigation = () => {
           <UserItem />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings2} onClick={settings.onOpen} />
+          <Item label="Gemini" icon={Brain} isGemini onClick={gemini.onOpen} />
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
         <div className="mt-4">
