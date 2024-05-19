@@ -6,6 +6,7 @@ import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
 
 import { useEdgeStore } from "@/lib/edgestore";
+import { useGemini } from "@/hooks/use-gemini";
 
 interface EditorProps {
   onChange: (value: string) => void;
@@ -16,6 +17,7 @@ interface EditorProps {
 const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   const { resolvedTheme } = useTheme();
   const { edgestore } = useEdgeStore();
+  const onSelectedText = useGemini((store) => store.onSelectedText);
 
   const handleUpload = async (file: File) => {
     const response = await edgestore.publicFiles.upload({
@@ -32,6 +34,9 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
       : undefined,
     onEditorContentChange: (editor) => {
       onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
+    },
+    onTextCursorPositionChange: (editor) => {
+      onSelectedText(editor.getSelectedText());
     },
     uploadFile: handleUpload,
   });
