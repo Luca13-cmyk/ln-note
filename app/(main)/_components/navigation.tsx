@@ -5,11 +5,13 @@ import { useMutation, useQuery } from "convex/react";
 import {
   Brain,
   ChevronsLeft,
+  HomeIcon,
   MenuIcon,
   Plus,
   PlusCircle,
   Search,
   Settings2,
+  Share2Icon,
   Trash,
 } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
@@ -158,9 +160,19 @@ const Navigation = () => {
         </div>
         <div>
           <UserItem />
+          <Item
+            label="Home"
+            icon={HomeIcon}
+            onClick={() => router.push("/documents")}
+          />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings2} onClick={settings.onOpen} />
           <Item label="Gemini" icon={Brain} isGemini onClick={gemini.onOpen} />
+          <Item
+            onClick={() => router.push("/public-documents")}
+            label="Public"
+            icon={Share2Icon}
+          />
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
         <div className="mt-4">

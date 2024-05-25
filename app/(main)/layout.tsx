@@ -5,6 +5,7 @@ import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import Navigation from "./_components/navigation";
 import { SearchCommand } from "@/components/search-command";
+import { GeminiModal } from "@/components/modals/gemini-modal";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -25,6 +26,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <Navigation />
       <main className="flex-1 h-full overflow-y-auto">
         <SearchCommand />
+        <GeminiModal />
         {children}
       </main>
     </div>
