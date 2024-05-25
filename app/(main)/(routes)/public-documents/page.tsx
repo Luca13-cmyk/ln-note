@@ -17,7 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const page = () => {
+const PublicDocuments = () => {
   const documents = useQuery(api.documents.getPublicDocuments);
   const origin = useOrigin();
 
@@ -90,4 +90,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PublicDocuments;
