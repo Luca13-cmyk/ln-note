@@ -10,11 +10,11 @@ export const Footer = () => {
         <Button variant="ghost" size="sm">
           Privacy Policy
         </Button>
-        <Button variant="ghost" size="sm">
+        <Button variant="ghost" size="sm" className="hidden md:block">
           Terms & Conditions
         </Button>
         <Button variant="ghost" size="sm">
-          Develop By: Luca Negrette
+          By Luca Negrette
         </Button>
       </div>
     </div>

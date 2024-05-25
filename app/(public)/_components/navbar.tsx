@@ -1,10 +1,11 @@
 "use client";
-import { Spinner } from "@/components/spinner";
+
 import { Button } from "@/components/ui/button";
 import { SignInButton } from "@clerk/clerk-react";
 import { useConvexAuth } from "convex/react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
+import { ArrowBigLeftDash, LogInIcon } from "lucide-react";
 export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const router = useRouter();
@@ -21,17 +22,20 @@ export const Navbar = () => {
           afterSignInUrl="/documents"
           afterSignUpUrl="/documents"
         >
-          <Button size="sm">Get LN NOTE free</Button>
+          <Button size="sm">
+            <LogInIcon />
+          </Button>
         </SignInButton>
       ) : (
         <Button
           size="sm"
+          variant="outline"
           onClick={() => {
-            router.push("/documents");
+            router.back();
           }}
         >
           {" "}
-          Go to your documents
+          <ArrowBigLeftDash />
         </Button>
       )}
     </nav>

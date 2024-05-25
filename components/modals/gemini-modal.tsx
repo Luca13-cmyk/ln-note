@@ -31,6 +31,11 @@ export const GeminiModal = () => {
   const response = useGemini((store) => store.response);
   const [text, setText] = useState("");
   const [isCopied, setIsCopied] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -41,6 +46,7 @@ export const GeminiModal = () => {
     };
 
     document.addEventListener("keydown", down);
+
     return () => document.removeEventListener("keydown", down);
   }, [toggle]);
 
@@ -50,6 +56,9 @@ export const GeminiModal = () => {
       setIsCopied(false);
     }, 4000);
   };
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Dialog
@@ -69,7 +78,7 @@ export const GeminiModal = () => {
             </kbd>
           </p>
 
-          <CopyToClipboard text={response} onCopy={handleCopy}>
+          <CopyToClipboard text={text} onCopy={handleCopy}>
             {isCopied ? (
               <ClipboardCheck className="self-end text-green-400 scale-110" />
             ) : (

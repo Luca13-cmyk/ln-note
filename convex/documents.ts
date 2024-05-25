@@ -73,6 +73,26 @@ export const getSidebar = query({
   },
 });
 
+export const getPublicDocuments = query({
+  args: {},
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userId = identity.subject;
+
+    const documents = await ctx.db
+      .query("documents")
+
+      .filter((q) => q.eq(q.field("isPublished"), true))
+      .order("desc")
+      .collect();
+    return documents;
+  },
+});
+
 export const create = mutation({
   args: {
     title: v.string(),
