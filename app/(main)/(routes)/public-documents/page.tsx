@@ -60,9 +60,9 @@ const PublicDocuments = () => {
           alt="Error"
           className="hidden dark:block"
         />
-        <h2 className="text-xl font-medium">Something went wrong!</h2>
+        <h2 className="text-xl font-medium">Algo deu errado!</h2>
         <Button asChild>
-          <Link href="/documents">Go back</Link>
+          <Link href="/documents">Voltar</Link>
         </Button>
       </div>
     );

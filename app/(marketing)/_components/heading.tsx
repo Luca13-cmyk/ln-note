@@ -12,12 +12,12 @@ export const Heading = () => {
   return (
     <div className="max-w-3xl space-y-4">
       <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
-        Your Ideas, Documents, & Plans. Unified. Welcome to{" "}
+        Suas ideias, Documentos & Planos. Juntos. Bem vindo(a) ao{" "}
         <span className="underline">LN NOTE</span>
       </h1>
       <h3 className="text-base sm:text-xl md:text-2xl font-medium">
-        LN NOTE is the connected workspace where <br />
-        better, faster work happens.
+        LN NOTE é o espaço de trabalho conectado onde <br />o trabalho acontece
+        de forma mais eficiente e rápida.
       </h3>
 
       {isLoading && (
@@ -28,7 +28,7 @@ export const Heading = () => {
       {isAuthenticated && !isLoading && (
         <Button asChild>
           <Link href="/documents">
-            Enter NOTES
+            Ver Notas
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
         </Button>
@@ -36,7 +36,7 @@ export const Heading = () => {
       {!isAuthenticated && !isLoading && (
         <SignInButton mode="modal">
           <Button>
-            Get LN NOTE free
+            Começar
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </SignInButton>

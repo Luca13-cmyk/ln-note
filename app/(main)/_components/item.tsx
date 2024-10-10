@@ -75,9 +75,9 @@ export const Item = ({
       }
     );
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created!",
-      error: "Failed to create a new note.",
+      loading: "Criando nota nota...",
+      success: "Nova nota criada!",
+      error: "Erro ao criar nova nota.",
     });
   };
 
@@ -90,9 +90,9 @@ export const Item = ({
     });
 
     toast.promise(promise, {
-      loading: "Moving to trash...",
-      success: "Note moved to trash!",
-      error: "Failed to archive note.",
+      loading: "Movento para a lixeira...",
+      success: "Nota movida para a lixeira!",
+      error: "Falha ao mover para a lixeira.",
     });
   };
 
@@ -154,11 +154,11 @@ export const Item = ({
             >
               <DropdownMenuItem onClick={onArchive}>
                 <Trash className="h-4 w-4 mr-2" />
-                Delete
+                Mova a lixeira
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <div className="text-xs text-muted-foreground p-2">
-                Last edited by: {user?.fullName}
+                Editado por: {user?.fullName}
               </div>
             </DropdownMenuContent>
           </DropdownMenu>

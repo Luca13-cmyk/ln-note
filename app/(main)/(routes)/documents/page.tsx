@@ -20,9 +20,9 @@ const DocumentsPage = () => {
     });
 
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created!",
-      error: "Failed to create a new note",
+      loading: "Criando nova nota...",
+      success: "Nova nota criada!",
+      error: "Erro ao criar nova nota",
     });
   };
 
@@ -43,11 +43,11 @@ const DocumentsPage = () => {
         className="hidden dark:block"
       />
       <h2 className="text-lg font-medium">
-        Welcome to {user?.firstName}&apos;s LN NOTE
+        Bem vindo, {user?.firstName} {user?.lastName}
       </h2>
       <Button onClick={onCreate}>
         <PlusCircle className="h-4 w-4 mr-2" />
-        Create a note
+        Criar nota
       </Button>
     </div>
   );

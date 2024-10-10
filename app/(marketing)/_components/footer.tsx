@@ -8,13 +8,13 @@ export const Footer = () => {
       <Logo />
       <div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground">
         <Button variant="ghost" size="sm">
-          Privacy Policy
+          Privacidade
         </Button>
         <Button variant="ghost" size="sm" className="hidden md:block">
-          Terms & Conditions
+          Termos & Condições
         </Button>
         <Button variant="ghost" size="sm">
-          By Luca Negrette
+          Por Luca Negrette
         </Button>
       </div>
     </div>

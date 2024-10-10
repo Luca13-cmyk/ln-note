@@ -32,16 +32,18 @@ export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>Tem certeza?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone.
+            Essa ação não pode ser desfeita.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={(e) => e.stopPropagation()}>
-            Cancel
+            Cancelar
           </AlertDialogCancel>
-          <AlertDialogAction onClick={handleConfirm}>Confirm</AlertDialogAction>
+          <AlertDialogAction onClick={handleConfirm}>
+            Confirmar
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

@@ -73,13 +73,13 @@ export const Publish = ({ initialData }: PublishProps) => {
         <Button size="sm" variant="ghost">
           {!initialData.isPublished && (
             <>
-              Private
+              Privado
               <EyeOff className="text-sky-500 w-4 h-4 ml-2" />
             </>
           )}
           {initialData.isPublished && (
             <>
-              Public
+              Público
               <Globe className="text-sky-500 w-4 h-4 ml-2" />
             </>
           )}
@@ -91,7 +91,7 @@ export const Publish = ({ initialData }: PublishProps) => {
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
               <p className="text-xs font-medium text-sky-500">
-                This note is live on web.
+                Essa nota foi publicada.
               </p>
             </div>
             <div className="flex items-center">
@@ -118,15 +118,15 @@ export const Publish = ({ initialData }: PublishProps) => {
               disabled={isSubmitting}
               onClick={onUnpublish}
             >
-              Unpublish
+              Ocultar
             </Button>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
             <Globe className="h-8 w-8 text-muted-foreground mb-2" />
-            <p className="text-sm font-medium mb-2">Publish this note</p>
+            <p className="text-sm font-medium mb-2">Publicar essa nota</p>
             <span className="text-xs text-muted-foreground mb-4">
-              Share your work with others.
+              Compartilhe com as outras pessoas.
             </span>
             <Button
               disabled={isSubmitting}
@@ -134,7 +134,7 @@ export const Publish = ({ initialData }: PublishProps) => {
               className="w-full text-xs"
               size="sm"
             >
-              Publish
+              Publicar
             </Button>
           </div>
         )}

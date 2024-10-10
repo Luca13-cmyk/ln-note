@@ -30,9 +30,9 @@ export const Menu = ({ documentId }: MenuProps) => {
     const promise = archive({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Moving to trash...",
-      success: "Note moved to trash!",
-      error: "Failed to archive note.",
+      loading: "Enviando a lixeira...",
+      success: "Nota movida para a lixeira!",
+      error: "Erro ao mover nota para a lixeira.",
     });
 
     router.push("/documents");
@@ -53,11 +53,11 @@ export const Menu = ({ documentId }: MenuProps) => {
       >
         <DropdownMenuItem onClick={onArchive}>
           <Trash className="h-4 w-4 mr-2" />
-          Delete
+          Mova a lixeira
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <div className="text-xs text-muted-foreground p-2">
-          Last edited by: {user?.fullName}
+          Editado por: {user?.fullName}
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

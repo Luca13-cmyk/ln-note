@@ -22,9 +22,9 @@ export const Banner = ({ documentId }: BannerProps) => {
     const promise = remove({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Deleting note...",
-      success: "Note deleted!",
-      error: "Failed to delete note.",
+      loading: "Excluindo nota...",
+      success: "Nota excluída!",
+      error: "Falha ao excluir nota.",
     });
 
     router.push("/documents");
@@ -34,22 +34,22 @@ export const Banner = ({ documentId }: BannerProps) => {
     const promise = restore({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Restoring note...",
-      success: "Note restored!",
-      error: "Failed to restore note.",
+      loading: "Restaurando nota...",
+      success: "Nota restaurada!",
+      error: "Falha ao restaurar nota.",
     });
   };
 
   return (
     <div className="w-full bg-rose-500 dark:bg-rose-800 text-center text-sm p-2 text-white flex items-center gap-x-2 justify-center">
-      <p>This page is in Trash.</p>
+      <p>Essa página está na lixeira.</p>
       <Button
         size="sm"
         onClick={onRestore}
         variant="outline"
         className="border-white bg-transparent hover:bg-primary/5 text-white hover:text-white p-1 px-2 h-auto font-normal"
       >
-        Restore page
+        Restaurar página
       </Button>
       <ConfirmModal onConfirm={onRemove}>
         <Button
@@ -57,7 +57,7 @@ export const Banner = ({ documentId }: BannerProps) => {
           variant="outline"
           className="border-white bg-transparent hover:bg-primary/5 text-white hover:text-white p-1 px-2 h-auto font-normal"
         >
-          Delete forever
+          Apagar de forma permanente
         </Button>
       </ConfirmModal>
     </div>

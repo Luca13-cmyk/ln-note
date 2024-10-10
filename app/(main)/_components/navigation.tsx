@@ -132,9 +132,9 @@ const Navigation = () => {
     });
 
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created successfully!",
-      error: "Failed to create a new note",
+      loading: "Criando nova nota...",
+      success: "Nova nota criada com sucesso!",
+      error: "Falha ao criar nova nota",
     });
   };
 
@@ -165,22 +165,31 @@ const Navigation = () => {
             icon={HomeIcon}
             onClick={() => router.push("/documents")}
           />
-          <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
-          <Item label="Settings" icon={Settings2} onClick={settings.onOpen} />
+          <Item
+            label="Procurar"
+            icon={Search}
+            isSearch
+            onClick={search.onOpen}
+          />
+          <Item
+            label="Configurações"
+            icon={Settings2}
+            onClick={settings.onOpen}
+          />
           <Item label="Gemini" icon={Brain} isGemini onClick={gemini.onOpen} />
           <Item
             onClick={() => router.push("/public-documents")}
-            label="Public"
+            label="Público"
             icon={Share2Icon}
           />
-          <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
+          <Item onClick={handleCreate} label="Nova Página" icon={PlusCircle} />
         </div>
         <div className="mt-4">
           <DocumentList />
           <Item onClick={handleCreate} icon={Plus} label="Add a page" />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
-              <Item label="Trash" icon={Trash} />
+              <Item label="Lixo" icon={Trash} />
             </PopoverTrigger>
             <PopoverContent
               className="p-0 w-72"
