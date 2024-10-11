@@ -186,10 +186,10 @@ const Navigation = () => {
         </div>
         <div className="mt-4">
           <DocumentList />
-          <Item onClick={handleCreate} icon={Plus} label="Add a page" />
+          <Item onClick={handleCreate} icon={Plus} label="Adicionar página" />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
-              <Item label="Lixo" icon={Trash} />
+              <Item label="Lixeira" icon={Trash} />
             </PopoverTrigger>
             <PopoverContent
               className="p-0 w-72"
